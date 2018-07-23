@@ -45,6 +45,17 @@
         android:layout_marginTop="30dp"
         android:text="login" />
 
+    <TextView
+        android:id="@+id/admin_login_txt_movetouserlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to user login"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/colorAccent"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:focusable="true"/>
+
 
 
 </LinearLayout>

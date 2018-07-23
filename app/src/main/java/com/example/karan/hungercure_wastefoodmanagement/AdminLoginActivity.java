@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -27,6 +28,7 @@ import java.util.Map;
 public class AdminLoginActivity extends AppCompatActivity
 {
     EditText edttxt_username, edttxt_password;
+    TextView    txt_movetouserlogin;
     Button btn_login;
     String url = Constants.URL_string + "admin_request_handler.php";
     String username,password;
@@ -39,11 +41,20 @@ public class AdminLoginActivity extends AppCompatActivity
         edttxt_username = findViewById(R.id.admin_login_edittxt_username);
         edttxt_password = findViewById(R.id.admin_login_edittxt_password);
         btn_login= findViewById(R.id.admin_login_btn_login);
+        txt_movetouserlogin = findViewById(R.id.admin_login_txt_movetouserlogin);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendRequest();
+            }
+        });
+
+        txt_movetouserlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminLoginActivity.this,UserLogin.class));
+                AdminLoginActivity.this.finish();
             }
         });
     }
